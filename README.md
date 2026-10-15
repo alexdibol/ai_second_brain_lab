@@ -12,7 +12,6 @@ The central idea is that a model’s answer depends on the knowledge made availa
 ## Start here
 
 - [Foundational monograph: *The Second Brain — Engineering Context for Intelligent Decisions*](https://github.com/alexdibol/ai_second_brain_lab/blob/main/the%20second%20brain%20project.pdf) — the conceptual framework, laboratory designs, comparative methodology, and teaching roadmap.
-- [Repository landing page](https://alexdibol.github.io/ai_second_brain_lab/) — project overview.
 - [MIT License](https://github.com/alexdibol/ai_second_brain_lab/blob/main/LICENSE) — license for this repository.
 
 ## The five laboratories
@@ -61,7 +60,7 @@ The lab places students in an advisory team serving a financial-services group s
 
 The proposed lab organizes synthetic central-bank episodes into a temporal and causal memory: circumstances, contemporaneous evidence, policy alternatives, decisions, outcomes, dissent, and later revisions. Students assess the basis and limits of historical analogies, guard against hindsight leakage, and prepare a conditional committee brief that can change when new evidence arrives.
 
-**Repository status:** The repository currently contains the [Lab 4 folder and its local guide](https://github.com/alexdibol/ai_second_brain_lab/tree/main/lab_04), but it does not yet contain a Lab 4 monograph, slide presentation, or Colab notebook. Those three assets are therefore not linked as available materials.
+**Repository status:** The [Lab 4 folder](https://github.com/alexdibol/ai_second_brain_lab/tree/main/lab_04) currently contains only a one-line placeholder file. It does not yet contain a Lab 4 monograph, slide presentation, or Colab notebook; those assets are not linked as available materials.
 
 ### Lab 5 — Autonomous legal research and endogenous graph navigation
 
@@ -95,11 +94,11 @@ The project compares information architectures where appropriate, including dire
 
 - `the second brain project.pdf` — foundational monograph for the five-lab series.
 - `lab_01/` — regulatory intelligence monograph, slides, and notebook.
-- `lab_02/` — market contagion monograph, slides, notebook, and local guide.
-- `lab_03/` — M&A discovery monograph, slides, notebook, and local guide.
-- `lab_04/` — institutional memory lab guide; its monograph, slides, and notebook are not yet in this repository.
+- `lab_02/` — market contagion monograph, slides, notebook, and a placeholder local README.
+- `lab_03/` — M&A discovery monograph, slides, notebook, and a placeholder local README.
+- `lab_04/` — institutional memory folder with a placeholder local README; its monograph, slides, and notebook are not yet in this repository.
 - `lab_05/` — autonomous legal research monograph, slides, and notebook.
-- `docs/` — project landing page.
+- `docs/index.html` — currently an empty placeholder for the landing page.
 
 ## How to use the materials
 
