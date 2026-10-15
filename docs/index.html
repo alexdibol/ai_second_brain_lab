@@ -1,1 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Five laboratories explore how structured knowledge, provenance and bounded AI judgment support better decisions in finance and institutions.">
+  <meta name="author" content="Alejandro Reynoso">
+  <meta name="theme-color" content="#071d35">
+  <link rel="canonical" href="https://alexdibol.github.io/ai_second_brain_lab/">
+  <title>The Second Brain Project | Engineering Context for Intelligent Decisions</title>
+  <style>
+    :root{--ink:#172432;--navy:#071d35;--deep:#041426;--paper:#f7f5ef;--gold:#c9a34c;--gold-dark:#8a6b27;--gold-soft:#e7d49a;--mist:#edf2f5;--muted:#607080;--line:#d9d5ca;--max:1220px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:86px}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65}
+    a{color:inherit;text-decoration:none}
+    a:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+    .page{width:min(var(--max),calc(100% - 48px));margin:auto}
+    h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:500;line-height:1.08}
+    .skip{position:absolute;left:12px;top:-80px;background:var(--gold);color:var(--navy);padding:12px;z-index:40}.skip:focus{top:12px}
+    .topbar{background:var(--deep);color:#fff;position:sticky;top:0;z-index:20;border-bottom:1px solid rgba(255,255,255,.12)}
+    .nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:13px;font-size:.76rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+    .brand-mark{width:39px;height:39px;border:1px solid var(--gold);display:grid;place-items:center;color:var(--gold);font-family:Georgia,serif;font-size:1.05rem}
+    .brand-name,.brand-sub{display:block}.brand-sub{color:#aabbc9;font-size:.61rem;letter-spacing:.12em;margin-top:3px}
+    .nav-links{display:flex;gap:23px;font-size:.82rem;font-weight:700}.nav-links a:hover{color:var(--gold)}
+    .hero{background:var(--navy);color:#fff}
+    .hero-grid{min-height:650px;display:grid;grid-template-columns:1.24fr .76fr;gap:62px;align-items:center;padding:88px 0 78px}
+    .eyebrow,.kicker{margin:0 0 19px;color:var(--gold);font-size:.75rem;font-weight:850;letter-spacing:.17em;text-transform:uppercase}
+    .hero h1{font-size:clamp(3.3rem,6.2vw,6.1rem);letter-spacing:-.055em;margin:0}
+    .hero h1 em{color:var(--gold);font-style:normal;display:block}
+    .hero-connector{display:block;font-size:.38em;line-height:1.5;letter-spacing:.015em;margin:.24em 0}
+    .hero-lead{font:500 clamp(1.25rem,2vw,1.65rem)/1.38 Georgia,serif;color:#e5edf3;max-width:760px;margin:28px 0 15px}
+    .hero-body{max-width:760px;color:#b9c7d2;font-size:1rem}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+    .button{display:inline-flex;align-items:center;justify-content:center;padding:14px 20px;border:1px solid transparent;font-size:.83rem;font-weight:800;transition:transform .18s ease,background .18s ease}
+    .button:hover{transform:translateY(-2px)}.button.primary{background:var(--gold);color:var(--navy)}.button.secondary{border-color:rgba(255,255,255,.36);color:#fff}
+    .hero-panel{position:relative;background:var(--paper);color:var(--ink);padding:39px 32px 30px;min-height:420px;box-shadow:20px 20px 0 rgba(0,0,0,.17)}
+    .hero-panel:before{content:"05";position:absolute;right:18px;top:4px;font:500 5.5rem Georgia;color:rgba(201,163,76,.16)}
+    .panel-kicker{position:relative;color:var(--gold-dark);text-transform:uppercase;font-size:.69rem;letter-spacing:.14em;font-weight:850}
+    .hero-panel h2{position:relative;font-size:2.15rem;margin:38px 0 26px}
+    .stats{border-top:1px solid var(--line)}.stats div{display:flex;align-items:center;gap:17px;padding:14px 0;border-bottom:1px solid var(--line)}
+    .stats strong{font:500 1.9rem Georgia;color:var(--gold-dark);min-width:55px}.stats span{font-size:.87rem;font-weight:740}
+    .hero-index{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:1px solid rgba(255,255,255,.16)}
+    .hero-index a{padding:18px 14px;border-right:1px solid rgba(255,255,255,.16);font-size:.75rem;color:#cad7e0}
+    .hero-index a:last-child{border-right:0}.hero-index span{display:block;color:var(--gold);font-weight:900;margin-bottom:5px}
+    .section{padding:100px 0}.split{display:grid;grid-template-columns:1.05fr .95fr;gap:76px;align-items:start}
+    .section h2{font-size:clamp(2.7rem,5vw,4.8rem);letter-spacing:-.045em;margin:0}
+    .intro{font-size:1.12rem;color:#33465a;margin:5px 0 0}.intro+.intro{margin-top:20px}
+    .principles{display:grid;grid-template-columns:repeat(3,1fr);margin-top:62px;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+    .principles article{padding:27px 23px 31px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .number{color:var(--gold-dark);font-size:.73rem;font-weight:900;letter-spacing:.08em}
+    .principles h3{font-size:1.45rem;margin:35px 0 12px}.principles p{font-size:.92rem;color:var(--muted);margin:0}
+    .roadmap{background:var(--deep);color:#fff;padding:100px 0}
+    .roadmap-head{display:grid;grid-template-columns:1fr .8fr;gap:70px;margin-bottom:54px}
+    .roadmap h2{font-size:clamp(2.8rem,5vw,5rem);margin:0}.roadmap-head>p{color:#b9c7d2;font-size:1.03rem;margin-top:8px}
+    .stages{display:grid;gap:13px}.stage{display:grid;grid-template-columns:88px 1fr 1fr 38px;background:#f6f3ea;color:var(--ink);min-height:132px}
+    .stage-no{background:var(--gold);color:var(--navy);padding:24px 17px;font:500 1.9rem Georgia}
+    .stage-main,.stage-outcome{padding:21px 25px}.stage-label{text-transform:uppercase;letter-spacing:.11em;color:var(--gold-dark);font-size:.69rem;font-weight:900}
+    .stage h3{font-size:1.55rem;margin:7px 0}.stage-main p,.stage-outcome p{margin:0;color:#485a6c;font-size:.88rem}
+    .stage-outcome{border-left:1px solid var(--line)}.stage-outcome strong{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em}
+    .arrow{display:grid;place-items:center;font-size:1.3rem;color:var(--gold-dark)}
+    .labs{background:var(--paper)}.lab-group{margin-top:58px}
+    .lab-group-head{display:grid;grid-template-columns:145px 1fr;gap:25px;align-items:start;padding:0 0 18px;border-bottom:1px solid var(--line)}
+    .lab-group-head span{color:var(--gold-dark);font-size:.72rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+    .lab-group-head h3{font-size:1.85rem;margin:0}
+    .lab-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:20px}
+    .lab-card{display:grid;grid-template-columns:76px 1fr;align-items:start;background:#fff;border:1px solid var(--line);padding:24px;min-height:330px}
+    .lab-card.featured{grid-column:1/-1;grid-template-columns:76px 1.05fr 1fr;gap:10px;background:var(--navy);color:#fff}
+    .lab-number{font:500 1.3rem Georgia;color:var(--gold-dark)}.featured .lab-number{color:var(--gold)}
+    .lab-content{display:flex;flex-direction:column;height:100%}.lab-role{display:block;color:var(--gold-dark);text-transform:uppercase;letter-spacing:.12em;font-size:.68rem;font-weight:900;margin-bottom:8px}
+    .featured .lab-role{color:var(--gold)}.lab-card h3{font-size:1.55rem;line-height:1.12;margin:0 0 9px}
+    .lab-card p{font-size:.88rem;color:var(--muted);margin:0 0 15px}.featured p{color:#c2ced8}
+    .lab-question{font:italic 1rem/1.4 Georgia,serif;color:#45576a;margin:0 0 18px}.featured .lab-question{color:var(--gold-soft)}
+    .lab-links{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:auto;padding-top:13px;border-top:1px solid var(--line)}
+    .featured .lab-links{border-color:rgba(255,255,255,.2)}
+    .lab-links a{color:var(--gold-dark);font-size:.76rem;font-weight:850;border-bottom:1px solid var(--gold);padding:4px 0}
+    .featured .lab-links a{color:var(--gold-soft)}
+    .lab-status{margin-top:auto;padding:12px 14px;background:#f3efe4;border-left:3px solid var(--gold);font-size:.82rem;color:#4e5a66}
+    .lab-card.featured .lab-status{background:#102b45;color:#d5e0e8}
+    .availability{display:inline-block;margin:5px 0 13px;color:var(--gold-soft);font-size:.74rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+    .resource{background:var(--mist)}.resource-panel{margin-top:45px;background:var(--navy);color:#fff;padding:38px;display:grid;grid-template-columns:.7fr 1.3fr;gap:45px}
+    .resource-panel h3{font-size:2rem;margin:16px 0}.resource-panel p{color:#c2ced8}.resource-panel .tag{color:var(--gold);text-transform:uppercase;letter-spacing:.13em;font-size:.7rem;font-weight:900}
+    .resource-links{display:flex;flex-wrap:wrap;gap:13px;margin-top:23px}.resource-links a{color:var(--gold-soft);border-bottom:1px solid var(--gold);font-size:.8rem;font-weight:800;padding:5px 0}
+    .method{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:44px}.method article{background:#fff;border:1px solid var(--line);padding:27px}
+    .method h3{font-size:1.45rem;margin:14px 0}.method p{color:var(--muted);margin:0;font-size:.93rem}
+    .author{background:var(--navy);color:#fff}.author-grid{display:grid;grid-template-columns:180px 1fr;gap:65px;align-items:center}
+    .author-mark{width:165px;height:165px;border:1px solid rgba(255,255,255,.35);display:grid;place-items:center;position:relative}
+    .author-mark:after{content:"";position:absolute;width:112px;height:112px;border:1px solid var(--gold)}
+    .author-mark span{font:500 2.6rem Georgia;z-index:1}.author h2{font-size:clamp(2.6rem,4vw,4.5rem);margin:0 0 20px}
+    .author p{color:#b9c7d2;max-width:900px;font-size:.98rem}.author .disclosure{margin-top:19px;padding-top:17px;border-top:1px solid rgba(255,255,255,.2);font-size:.87rem;color:var(--gold-soft)}
+    .author a{border-bottom:1px solid var(--gold)}.footer{background:var(--deep);color:#91a3b2;padding:34px 0;font-size:.78rem}
+    .footer-grid{display:grid;grid-template-columns:1fr auto;gap:24px}.footer strong{color:#fff}.footer a{color:#fff;margin-left:18px}
+    @media(max-width:950px){.hero-grid,.split,.roadmap-head,.resource-panel,.author-grid{grid-template-columns:1fr}.hero-grid{min-height:0;padding:68px 0}.hero-panel{max-width:600px}.principles{grid-template-columns:1fr 1fr}.stage{grid-template-columns:62px 1fr 32px}.stage-no{grid-row:1/3}.stage-outcome{grid-column:2/3;border-left:0;padding-top:0}.arrow{grid-column:3;grid-row:1/3}.lab-card.featured{grid-template-columns:65px 1fr}.lab-card.featured .lab-links{grid-column:2}.nav{flex-wrap:wrap;padding:13px 0}.nav-links{flex-wrap:wrap}}
+    @media(max-width:620px){.page{width:min(calc(100% - 28px),var(--max))}.nav{align-items:flex-start}.nav-links{gap:12px;font-size:.76rem}.hero h1{font-size:clamp(2.65rem,12vw,3.8rem)}.hero-index{grid-template-columns:1fr 1fr}.hero-index a{border-bottom:1px solid rgba(255,255,255,.15)}.section,.roadmap{padding:74px 0}.principles,.method,.lab-grid{grid-template-columns:1fr}.lab-card,.lab-card.featured{grid-column:auto;grid-template-columns:1fr;gap:12px;padding:21px;min-height:0}.lab-card.featured .lab-links{grid-column:auto}.lab-group-head{grid-template-columns:1fr;gap:8px}.stage{grid-template-columns:48px 1fr 26px}.stage-no{padding:18px 9px;font-size:1.4rem}.stage-main,.stage-outcome{padding:17px}.stage-outcome{padding-top:0}.resource-panel{padding:25px;gap:15px}.author-mark{width:130px;height:130px}.author-mark:after{width:92px;height:92px}.footer-grid{grid-template-columns:1fr}.footer a{display:inline-block;margin:12px 14px 0 0}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="topbar">
+    <nav class="page nav" aria-label="Primary navigation">
+      <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">SB</span><span><span class="brand-name">The Second Brain Project</span><span class="brand-sub">Knowledge · Context · Judgment</span></span></a>
+      <div class="nav-links"><a href="#idea">The idea</a><a href="#sequence">Sequence</a><a href="#labs">Laboratories</a><a href="#method">Method</a><a href="#author">Author</a></div>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="page hero-grid">
+        <div>
+          <p class="eyebrow">Structured knowledge · Bounded intelligence · Finance</p>
+          <h1>Engineering<span class="hero-connector">context for</span><em>intelligent decisions.</em></h1>
+          <p class="hero-lead">A Second Brain makes relevant knowledge navigable, evidence traceable, and judgment inspectable.</p>
+          <p class="hero-body">Five laboratories apply this idea to regulatory intelligence, market contagion, M&amp;A discovery, institutional memory, and legal research. Together they ask how a decision-maker can know what matters, see how claims connect, and identify what remains uncertain.</p>
+          <div class="actions"><a class="button primary" href="#labs">Explore the five laboratories ↓</a><a class="button secondary" href="https://github.com/alexdibol/ai_second_brain_lab/blob/main/the%20second%20brain%20project.pdf">Read the foundational monograph ↗</a></div>
+        </div>
+        <aside class="hero-panel" aria-label="Project at a glance">
+          <p class="panel-kicker">The central proposition</p>
+          <h2>Better judgment begins with better context.</h2>
+          <div class="stats">
+            <div><strong>05</strong><span>Professional decision laboratories</span></div>
+            <div><strong>04</strong><span>Labs with monograph, slides, and notebook available</span></div>
+            <div><strong>→</strong><span>From organized knowledge to accountable action</span></div>
+          </div>
+        </aside>
+      </div>
+      <nav class="page hero-index" aria-label="Laboratory navigation">
+        <a href="#lab1"><span>I · AUTHORITY</span>Regulatory intelligence</a>
+        <a href="#lab2"><span>II · TRANSMISSION</span>Market contagion</a>
+        <a href="#lab3"><span>III · DISCOVERY</span>M&amp;A opportunity</a>
+        <a href="#lab4"><span>IV · MEMORY</span>Central-bank learning</a>
+        <a href="#lab5"><span>V · RESEARCH</span>Adaptive legal inquiry</a>
+      </nav>
+    </section>
 
+    <section class="section" id="idea">
+      <div class="page">
+        <div class="split">
+          <div><p class="kicker">The Second Brain</p><h2>Knowledge is an architecture of judgment.</h2></div>
+          <div><p class="intro">A model can only reason over the context it receives. In complex institutions, the decisive information is spread across sources, jurisdictions, relationships, and time.</p><p class="intro">The project studies how portable notes, typed knowledge graphs, explicit provenance, temporal validity, and decision-specific retrieval can help assemble a more useful and auditable view of a problem.</p></div>
+        </div>
+        <div class="principles">
+          <article><span class="number">01 · REPRESENT</span><h3>Make knowledge addressable.</h3><p>Convert documents into navigable notes while retaining source passages, dates, status, and stable identifiers.</p></article>
+          <article><span class="number">02 · CONNECT</span><h3>Give relationships meaning.</h3><p>Use typed, evidence-backed links to expose dependencies, authority chains, conflicts, and multi-hop paths.</p></article>
+          <article><span class="number">03 · ASSEMBLE</span><h3>Build context for a decision.</h3><p>Retrieve relevant evidence and uncertainty within explicit limits. Let people inspect how the dossier was formed.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="roadmap" id="sequence">
+      <div class="page">
+        <div class="roadmap-head"><div><p class="kicker">Five forms of decision knowledge</p><h2>From authority<br>to adaptive inquiry.</h2></div><p>Each laboratory changes the professional problem while retaining a common discipline: represent the evidence, preserve provenance, test the paths, and leave consequential decisions open to qualified human judgment.</p></div>
+        <div class="stages">
+          <article class="stage"><div class="stage-no">01</div><div class="stage-main"><span class="stage-label">Regulatory intelligence</span><h3>Establish authority.</h3><p>Trace powers, constraints, exceptions, and institutional dependencies.</p></div><div class="stage-outcome"><strong>Decision question</strong><p>What can the authority defensibly do?</p></div><div class="arrow" aria-hidden="true">↓</div></article>
+          <article class="stage"><div class="stage-no">02</div><div class="stage-main"><span class="stage-label">Market contagion</span><h3>Trace transmission.</h3><p>Follow shocks across firms, suppliers, financing, and shared exposures.</p></div><div class="stage-outcome"><strong>Decision question</strong><p>Where might the impact travel next?</p></div><div class="arrow" aria-hidden="true">↓</div></article>
+          <article class="stage"><div class="stage-no">03</div><div class="stage-main"><span class="stage-label">M&amp;A discovery</span><h3>Find strategic combinations.</h3><p>Connect capabilities and relationships, then test feasibility and risk.</p></div><div class="stage-outcome"><strong>Decision question</strong><p>Which opportunity is compelling and executable?</p></div><div class="arrow" aria-hidden="true">↓</div></article>
+          <article class="stage"><div class="stage-no">04</div><div class="stage-main"><span class="stage-label">Institutional memory</span><h3>Learn without hindsight.</h3><p>Compare past decisions with current conditions while preserving chronology and dissent.</p></div><div class="stage-outcome"><strong>Decision question</strong><p>Which precedent applies, and where does it differ?</p></div><div class="arrow" aria-hidden="true">↓</div></article>
+          <article class="stage"><div class="stage-no">05</div><div class="stage-main"><span class="stage-label">Autonomous legal research</span><h3>Choose what to investigate.</h3><p>Let an LLM propose bounded evidence-seeking actions; deterministic tools validate and record each one.</p></div><div class="stage-outcome"><strong>Decision question</strong><p>What evidence should the researcher seek next?</p></div><div class="arrow" aria-hidden="true">✓</div></article>
+        </div>
+        <p class="intro" style="margin-top:30px;color:#d7e0e7">Knowledge → Context → Judgment → Action → Learning</p>
+      </div>
+    </section>
+
+    <section class="section labs" id="labs">
+      <div class="page">
+        <div class="split"><div><p class="kicker">The computational laboratories</p><h2>Five settings.<br>One knowledge discipline.</h2></div><p class="intro">Each available lab pairs a monograph, a slide presentation, and a Colab notebook. Read the argument, inspect the architecture, then run the demonstration. The Lab 4 design is described in the project monograph; its three companion files are not yet in the repository.</p></div>
+        <div class="lab-group">
+          <div class="lab-group-head"><span>I–V · Applied sequence</span><h3>From legal authority and market networks to adaptive research judgment.</h3></div>
+          <div class="lab-grid">
+            <article class="lab-card" id="lab1">
+              <span class="lab-number">LAB 1</span><div class="lab-content"><span class="lab-role">Authority &amp; constraints</span><h3>Regulatory intelligence during a payment-system crisis</h3><p>In a synthetic crisis, determine which measures fit an authority’s competence, which require coordination or legislation, and what residual risks remain. The vault connects legal sources, provisions, institutions, activities, and proposed interventions.</p><p class="lab-question">Can the measure be supported by a traceable authority chain?</p><div class="lab-links"><a href="https://github.com/alexdibol/ai_second_brain_lab/blob/main/lab_01/regulatory_intelligence_github.pdf">Monograph ↗</a><a href="https://github.com/alexdibol/ai_second_brain_lab/blob/main/lab_01/slides_regulatory_intelligence.pdf">Slides ↗</a><a href="https://github.com/alexdibol/ai_second_brain_lab/blob/main/lab_01/colab_notebook_regulatory_intelligence.ipynb">Notebook ↗</a><a href="https://colab.research.google.com/github/alexdibol/ai_second_brain_lab/blob/main/lab_01/colab_notebook_regulatory_intelligence.ipynb">Open in Colab ↗</a></div></div>
+            </article>
+            <article class="lab-card" id="lab2">
+              <span class="lab-number">LAB 2</span><div class="lab-content"><span class="lab-role">Economic transmission</span><h3>Trading intelligence and rapid contagion</h3><p>Trace how an operational or supply-chain shock could reach a synthetic universe of roughly 500 listed companies through supplier, financing, ownership, competition, and shared-infrastructure links. Graph analysis complements conventional risk measures and generates hypotheses for review.</p><p class="lab-question">Where might the shock travel before returns reveal it?</p><div class="lab-links"><a href="https://github.com/alexdibol/ai_second_brain_lab/blob/main/lab_02/contagion_second_brain_github.pdf">Monograph ↗</a><a href="https://github.com/alexdibol/ai_second_brain_lab/blob/main/lab_02/slides_contagion_second_brain_github.pdf">Slides ↗</a><a href="https://github.com/alexdibol/ai_second_brain_lab/blob/main/lab_02/TRADING_CONTAGION_SECOND_BRAIN_github.ipynb">Notebook ↗</a><a href="https://colab.research.google.com/github/alexdibol/ai_second_brain_lab/blob/main/lab_02/TRADING_CONTAGION_SECOND_BRAIN_github.ipynb">Open in Colab ↗</a></div></div>
+            </article>
+            <article class="lab-card" id="lab3">
+              <span class="lab-number">LAB 3</span><div class="lab-content"><span class="lab-role">Strategic discovery</span><h3>Multinational M&amp;A opportunity discovery</h3><p>Search a synthetic corporate universe for complementary capabilities, licenses, technologies, and distribution. Compare tabular, semantic, graph-guided, and hybrid methods while keeping strategic fit, regulatory feasibility, and transaction economics distinct.</p><p class="lab-question">Which target is attractive, explainable, and feasible?</p><div class="lab-links"><a href="https://github.com/alexdibol/ai_second_brain_lab/blob/main/lab_03/second_brain_investment_banking_github.pdf">Monograph ↗</a><a href="https://github.com/alexdibol/ai_second_brain_lab/blob/main/lab_03/slides_second_brain_investment_banking_github.pdf">Slides ↗</a><a href="https://github.com/alexdibol/ai_second_brain_lab/blob/main/lab_03/SECOND_BRAIN_INVESTMENT_BANKING_github.ipynb">Notebook ↗</a><a href="https://colab.research.google.com/github/alexdibol/ai_second_brain_lab/blob/main/lab_03/SECOND_BRAIN_INVESTMENT_BANKING_github.ipynb">Open in Colab ↗</a></div></div>
+            </article>
+            <article class="lab-card" id="lab4">
+              <span class="lab-number">LAB 4</span><div class="lab-content"><span class="lab-role">Temporal institutional memory</span><h3>Central-bank institutional memory</h3><p>Organize synthetic policy episodes around contemporaneous evidence, alternatives, decisions, outcomes, dissent, and later revisions. Assess historical analogies without hindsight leakage, and show how new evidence should change—or leave unchanged—a committee brief.</p><p class="lab-question">What was known then, and what is genuinely comparable now?</p><div class="lab-status"><strong>Materials in development.</strong> The monograph describes the design. This repository does not yet contain the Lab 4 monograph, slides, or Colab notebook. <a href="https://github.com/alexdibol/ai_second_brain_lab/tree/main/lab_04">View Lab 4 folder ↗</a></div></div></article>
+            <article class="lab-card featured" id="lab5">
+              <span class="lab-number">LAB 5</span><div class="lab-content"><span class="lab-role">Bounded adaptive research</span><h3>Autonomous legal research and endogenous graph navigation</h3><p>The capstone uses a synthetic Mexican legal system and three incomplete consultations. The LLM proposes actions such as inspecting a record, following a typed relationship, searching a domain, testing an exception, or stopping. A deterministic gateway validates and executes each action, enforces budgets, updates the evidence state, and logs the trace.</p><p class="lab-question">Can adaptive research improve evidence discovery while keeping execution bounded and reviewable?</p></div><div class="lab-content"><span class="availability">Monograph, slides &amp; notebook available</span><p>Compare semantic retrieval, fixed graph traversal, and LLM-guided navigation. The output is a conditional, source-traceable memorandum for human review—not an autonomous legal opinion.</p><div class="lab-links"><a href="https://github.com/alexdibol/ai_second_brain_lab/blob/main/lab_05/legal%20knowledge%20and%20intelligence.pdf">Monograph ↗</a><a href="https://github.com/alexdibol/ai_second_brain_lab/blob/main/lab_05/slides%20legal%20knowledge%20and%20intelligence.pdf">Slides ↗</a><a href="https://github.com/alexdibol/ai_second_brain_lab/blob/main/lab_05/colab%20notebook%20legal%20knowledge%20and%20intelligence.ipynb">Notebook ↗</a><a href="https://colab.research.google.com/github/alexdibol/ai_second_brain_lab/blob/main/lab_05/colab%20notebook%20legal%20knowledge%20and%20intelligence.ipynb">Open in Colab ↗</a></div></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section resource" id="method">
+      <div class="page">
+        <div class="split"><div><p class="kicker">The conceptual synthesis</p><h2>Test the value<br>of structure.</h2></div><div><p class="intro">The project does not assume that a graph or an agent is always better. It compares information architectures on the same task and evidence wherever practicable.</p><p class="intro">The monograph sets out the shared architecture, experimental design, evaluation criteria, and intended notebook roadmap for all five labs.</p></div></div>
+        <article class="resource-panel"><div><span class="tag">Foundational project monograph</span><h3>The Second Brain</h3><p>Engineering Context for Intelligent Decisions</p></div><div><p>Read the conceptual framework behind the five laboratories: portable Markdown notes, typed graphs, evidence provenance, temporal validity, bounded context assembly, and a capstone research policy in which the LLM selects among constrained evidence-seeking actions.</p><p class="kicker" style="margin:20px 0 8px">Comparative methods</p><p>Direct prompting · curated long context · semantic retrieval · fixed graph traversal · bounded LLM-guided navigation</p><div class="resource-links"><a href="https://github.com/alexdibol/ai_second_brain_lab/blob/main/the%20second%20brain%20project.pdf">Read the monograph ↗</a><a href="https://github.com/alexdibol/ai_second_brain_lab/blob/main/README.md">Project README ↗</a><a href="https://github.com/alexdibol/ai_second_brain_lab">Browse repository ↗</a></div></div></article>
+        <div class="method"><article><span class="number">EVALUATE, DO NOT PRESUME</span><h3>Structure is a hypothesis.</h3><p>Completeness, traceability, responsiveness, and decision quality are evaluated against meaningful baselines. A well-maintained long-context or semantic system may be sufficient for many questions.</p></article><article><span class="number">KEEP THE EVIDENCE VISIBLE</span><h3>Paths are not proof.</h3><p>Graph links and model outputs require source validation. Errors in a corpus, edge, or research policy can make a system’s mistakes more systematic.</p></article></div>
+      </div>
+    </section>
+
+    <section class="section author" id="author">
+      <div class="page author-grid">
+        <div class="author-mark" aria-hidden="true"><span>AR</span></div>
+        <div><p class="kicker">Author and project architect</p><h2>Alejandro Reynoso</h2><p>This project develops a practical teaching framework for professionals who need to understand how AI systems use knowledge, navigate evidence, and support institutional decisions.</p><p class="disclosure"><strong>AI-assisted, author-directed.</strong> AI tools assisted with coding and writing. The project’s design, academic content, supervision and direction, and final editorial responsibility remain with Alejandro Reynoso.</p><p class="disclosure"><strong>Educational use.</strong> Companies, crises, transactions, networks, consultations, and legal records are synthetic unless a source is explicitly identified. The legal materials do not state current Mexican law or constitute legal advice. Market and M&amp;A outputs are not investment recommendations, validated trading signals, valuations, or transaction advice. Qualified human review remains essential.</p><p class="disclosure"><strong>Copyright and license.</strong> © 2026 Alejandro Reynoso. Repository materials are released under the <a href="https://github.com/alexdibol/ai_second_brain_lab/blob/main/LICENSE">MIT License</a>.</p></div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="page footer-grid"><div><strong>The Second Brain Project — Engineering Context for Intelligent Decisions</strong><br>© 2026 Alejandro Reynoso · Research and education</div><div><a href="https://github.com/alexdibol/ai_second_brain_lab">GitHub ↗</a><a href="https://github.com/alexdibol/ai_second_brain_lab/blob/main/README.md">README ↗</a><a href="https://github.com/alexdibol/ai_second_brain_lab/blob/main/LICENSE">MIT License ↗</a><a href="#top">Back to top ↑</a></div></div></footer>
+</body>
+</html>
