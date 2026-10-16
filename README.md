@@ -56,11 +56,19 @@ The lab places students in an advisory team serving a financial-services group s
 
 ### Lab 4 — Central-bank institutional memory
 
-**Question:** How can a policy team use historical experience without confusing analogy with identity or allowing hindsight to distort what decision-makers knew at the time?
+**Question:** How can a central-bank policy team draw on past liquidity and financial-stability episodes without confusing historical analogy with causal evidence, overlooking legal and operational constraints, or allowing hindsight to distort what policymakers knew at the time?
 
-The proposed lab organizes synthetic central-bank episodes into a temporal and causal memory: circumstances, contemporaneous evidence, policy alternatives, decisions, outcomes, dissent, and later revisions. Students assess the basis and limits of historical analogies, guard against hindsight leakage, and prepare a conditional committee brief that can change when new evidence arrives.
+This laboratory turns a **synthetic institutional-memory vault** into an auditable decision-support workflow. Markdown notes encode historical episodes, policy decisions, transmission mechanisms, instruments, indicators, authorities, constraints, research, counterarguments, and observed outcomes. The notes contain genuine Obsidian `[[wikilinks]]` so their connections remain navigable inside the vault, while typed relationships are also represented in NetworkX knowledge graphs.
 
-**Repository status:** The [Lab 4 folder](https://github.com/alexdibol/ai_second_brain_lab/tree/main/lab_04) currently contains only a one-line placeholder file. It does not yet contain a Lab 4 monograph, slide presentation, or Colab notebook; those assets are not linked as available materials.
+Students formulate a hypothetical funding-market disruption, retrieve relevant notes, follow bounded multi-hop paths, and compare strong and weak historical precedents. Temporal cutoffs and source identifiers help distinguish information available at a past decision date from later evaluations. The Claude Haiku judgment stage synthesizes a bounded evidence packet, and controlled adaptive discovery may propose additional evidence subject to deterministic validation. The final output is a **traceable, conditional policy-committee memorandum**, accompanied by provenance and integrity checks. The example is educational and does not delegate real policy authority to an AI model.
+
+The ten-code-cell sequence covers environment setup; vault generation; parsing and indexing; derived precedent, causal, authority/constraint, and evidence graphs; query formulation; governed traversal; precedent testing; LLM judgment; bounded adaptive discovery; and the final memorandum and audit. The notebook may generate additional artifacts in Google Drive when executed; those generated outputs are distinct from the three published teaching materials below.
+
+| Material | Link |
+| --- | --- |
+| Monograph | [Central-bank institutional memory monograph (PDF)](https://github.com/alexdibol/ai_second_brain_lab/blob/main/lab_04/second_brain_central_bank_github.pdf) |
+| Slide presentation | [Central-bank institutional memory Beamer slides (PDF)](https://github.com/alexdibol/ai_second_brain_lab/blob/main/lab_04/slides_beamer_second_brain_central_bank.pdf) |
+| Colab notebook | [Open notebook in Google Colab](https://colab.research.google.com/github/alexdibol/ai_second_brain_lab/blob/main/lab_04/colab_notebook_second_brain_central_bank.ipynb) · [Notebook on GitHub](https://github.com/alexdibol/ai_second_brain_lab/blob/main/lab_04/colab_notebook_second_brain_central_bank.ipynb) |
 
 ### Lab 5 — Autonomous legal research and endogenous graph navigation
 
@@ -96,7 +104,7 @@ The project compares information architectures where appropriate, including dire
 - `lab_01/` — regulatory intelligence monograph, slides, and notebook.
 - `lab_02/` — market contagion monograph, slides, notebook, and a placeholder local README.
 - `lab_03/` — M&A discovery monograph, slides, notebook, and a placeholder local README.
-- `lab_04/` — institutional memory folder with a placeholder local README; its monograph, slides, and notebook are not yet in this repository.
+- `lab_04/` — central-bank institutional memory monograph, Beamer slides, Colab notebook, and a placeholder local README.
 - `lab_05/` — autonomous legal research monograph, slides, and notebook.
 - `docs/index.html` — currently an empty placeholder for the landing page.
 
