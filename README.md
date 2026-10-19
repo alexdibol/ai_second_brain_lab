@@ -2,7 +2,7 @@
 
 **Engineering context for intelligent decisions**
 
-This repository contains the teaching materials for a five-laboratory Second Brain project. It explores how structured knowledge, source provenance, graph relationships, and bounded AI judgment can help professionals assemble decision-relevant context and examine complex questions.
+This repository contains the teaching materials for a six-laboratory Second Brain project. It explores how structured knowledge, source provenance, graph relationships, and bounded AI judgment can help professionals assemble decision-relevant context and examine complex questions.
 
 The central idea is that a model’s answer depends on the knowledge made available to it: how that knowledge is represented, connected, dated, sourced, and tested. The labs move from retrieval and structured context toward adaptive, tool-mediated research. They are designed as educational experiments, not as claims that graph-based methods always outperform simpler approaches.
 
@@ -14,9 +14,9 @@ The central idea is that a model’s answer depends on the knowledge made availa
 - [Foundational monograph: *The Second Brain — Engineering Context for Intelligent Decisions*](https://github.com/alexdibol/ai_second_brain_lab/blob/main/the%20second%20brain%20project.pdf) — the conceptual framework, laboratory designs, comparative methodology, and teaching roadmap.
 - [MIT License](https://github.com/alexdibol/ai_second_brain_lab/blob/main/LICENSE) — license for this repository.
 
-## The five laboratories
+## The six laboratories
 
-Each laboratory applies the Second Brain idea to a different professional decision problem. The monograph describes the full intended design; the links below identify the artifacts currently present in the repository.
+The laboratories begin with professional and institutional decision problems, then test how the same knowledge-engineering principles extend to broader intellectual inquiry. The monograph describes the full intended design; the links below identify the artifacts currently present in the repository.
 
 ### Lab 1 — Regulatory intelligence during a payment-system crisis
 
@@ -82,15 +82,34 @@ This capstone uses a synthetic Mexican legal system and three incomplete consult
 | Slide presentation | [Legal knowledge and intelligence slides (PDF)](https://github.com/alexdibol/ai_second_brain_lab/blob/main/lab_05/slides%20legal%20knowledge%20and%20intelligence.pdf) |
 | Colab notebook | [Open notebook in Google Colab](https://colab.research.google.com/github/alexdibol/ai_second_brain_lab/blob/main/lab_05/colab%20notebook%20legal%20knowledge%20and%20intelligence.ipynb) · [Notebook on GitHub](https://github.com/alexdibol/ai_second_brain_lab/blob/main/lab_05/colab%20notebook%20legal%20knowledge%20and%20intelligence.ipynb) |
 
+### Lab 6 — The Literary Second Brain: from institutional intelligence to humanistic inquiry
+
+**Question:** Can the same Second Brain architecture used for financial, legal, and institutional intelligence help us navigate an interconnected universe of classic literature and investigate fundamental questions about identity, suffering, freedom, power, and mortality—without confusing graph connectivity with literary interpretation or textual evidence?
+
+**Lab 6 is a deliberate generalization, not a departure from the project.** The broader reading project considers **84 completed classic works** across literary and philosophical traditions. The computational literary atlas used in this laboratory is an evolving, structured representation of that universe; it should **not** be assumed to contain complete, independently verified primary texts for all 84 books. Its notes, links, and proposed interpretations are the research material to examine critically, not established conclusions.
+
+The laboratory treats the literary corpus as a **knowledge vault**: Markdown notes represent works, authors, concepts, movements, existential questions, and proposed reading circuits. Students restore and audit the physical Obsidian vault, compare its wikilinks with the supplied directed multigraph, inspect the reliability and provisional status of relationships, and construct readable local graph maps instead of relying on an opaque cloud of nodes. They formulate five humanistic questions, select starting library cards, and define a transparent navigation policy.
+
+Two investigators then explore the same atlas from comparable starting points. **Agent A** follows explicit deterministic scoring and traversal rules; **Agent B** uses bounded Claude-assisted judgment to choose among authorized neighboring records. The laboratory preserves each path, its direction, relationship types, uncertainty statuses, and supporting vault excerpts, and compares routes using descriptive measures such as works visited, node-type diversity, provisional-link share, and path overlap. The final artifacts are **traceable reading journeys, comparative evidence packets, and reproducible reports**—not automatically validated answers to philosophical questions.
+
+The pedagogical insight generalizes beyond literature: a well-constructed Second Brain can help explore **scientific research, archival collections, institutional histories, policy records, legal corpora, and other knowledge vaults**. Across domains, the same disciplines remain essential: source integrity, meaningful typed connections, transparent retrieval, explicit uncertainty, constrained LLM initiative, and human responsibility for interpretation.
+
+| Material | Link |
+| --- | --- |
+| Monograph | [The Literary Second Brain monograph (PDF)](https://github.com/alexdibol/ai_second_brain_lab/blob/main/lab_06/literary_second_brain_github.pdf) |
+| Slide presentation | [The Literary Second Brain Beamer slides (PDF)](https://github.com/alexdibol/ai_second_brain_lab/blob/main/lab_06/slides_literary_second_brain_github.pdf) |
+| Colab notebook | [Open notebook in Google Colab](https://colab.research.google.com/github/alexdibol/ai_second_brain_lab/blob/main/lab_06/colab_notebook_literary_second_brain_tex.ipynb) · [Notebook on GitHub](https://github.com/alexdibol/ai_second_brain_lab/blob/main/lab_06/colab_notebook_literary_second_brain_tex.ipynb) |
+
 ## Intellectual sequence
 
-The five labs examine complementary forms of decision-relevant knowledge:
+The six labs investigate complementary forms of structured knowledge, first in professional decision-making and then in broader humanistic inquiry:
 
 1. **Authority and constraints** — determine what an institution may do and what evidence supports that authority.
 2. **Economic transmission** — trace how shocks can propagate through interdependent firms and markets.
 3. **Strategic discovery** — find opportunities through combinations of capabilities and relationships.
 4. **Institutional learning** — compare current conditions with past decisions while preserving chronology and dissent.
 5. **Adaptive research judgment** — let an AI system select among bounded evidence-seeking actions, with deterministic execution and human responsibility.
+6. **Humanistic generalization** — apply vault engineering, graph navigation, and bounded LLM exploration to classical literature and existential questions while keeping retrieval distinct from interpretation.
 
 Across the series, the workflow is:
 
@@ -100,13 +119,14 @@ The project compares information architectures where appropriate, including dire
 
 ## Repository layout
 
-- `the second brain project.pdf` — foundational monograph for the five-lab series.
+- `the second brain project.pdf` — foundational monograph describing the original five-lab series; Lab 6 extends the research program.
 - `lab_01/` — regulatory intelligence monograph, slides, and notebook.
 - `lab_02/` — market contagion monograph, slides, notebook, and a placeholder local README.
 - `lab_03/` — M&A discovery monograph, slides, notebook, and a placeholder local README.
 - `lab_04/` — central-bank institutional memory monograph, Beamer slides, Colab notebook, and a placeholder local README.
 - `lab_05/` — autonomous legal research monograph, slides, and notebook.
-- `docs/index.html` — currently an empty placeholder for the landing page.
+- `lab_06/` — Literary Second Brain monograph, Beamer slides, Colab notebook, and a placeholder local README.
+- `docs/index.html` — public landing page for the laboratory series (its Lab 6 presentation may require a separate update).
 
 ## How to use the materials
 
@@ -118,7 +138,7 @@ The foundational monograph describes the intended experimental designs and safeg
 
 AI tools assisted with coding and writing during preparation of some repository materials. **Alejandro Reynoso is responsible for the project’s design, academic content, supervision and direction of the work, and final editorial decisions.** AI assistance does not replace or assume the author’s intellectual or editorial responsibility.
 
-The project is educational. The companies, crises, transactions, networks, consultations, and legal records used in the laboratories are synthetic unless a source is explicitly identified otherwise. The legal materials in the capstone do not state current Mexican law and do not constitute legal advice. The market and M&A exercises are not investment recommendations, and simulated outputs are not validated trading signals, valuations, or transaction advice. Professional decisions require current authoritative evidence and qualified human review.
+The project is educational. The companies, crises, transactions, networks, consultations, and legal records used in the professional laboratories are synthetic unless a source is explicitly identified otherwise. Lab 6 instead draws on named literary works and an evolving interpretive atlas; its graph links, summaries, and hypotheses should not be mistaken for verified primary-text quotations or established literary influence. The legal materials in the capstone do not state current Mexican law and do not constitute legal advice. The market and M&A exercises are not investment recommendations, and simulated outputs are not validated trading signals, valuations, or transaction advice. Professional decisions require current authoritative evidence and qualified human review.
 
 ## License
 
